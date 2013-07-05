@@ -1,23 +1,8 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<div class="top">
+  <h1>Survey Otter</h1>
+  <a href="/login">Login</a>
+  <a href="/login">Signup</a> 
+</div>
+<div class="landing_pic">
+  <img src="http://main.dailyotter.org/wp-content/uploads/2012/09/tumblr_m77hmy4h8E1qzs75go1_1280.jpg" alt="otter">
 </div>
