@@ -12,10 +12,10 @@ get '/user/:id' do
   #lists surveys user has created
   #gives option to create new survey
   #lists surveys user has taken
+  @user = User.find(params[:id])
+  @surveys = @user.surveys
 
-  @surveys = User.surveys
-
-  @taken_surveys = Responses.where_user_id(params[:id]).map {|response| response.question.survey }.uniq
+  @taken_surveys = Response.find_all_by_user_id(params[:id]).map {|response| response.question.survey }.uniq
 
   erb :user
 end
@@ -28,7 +28,7 @@ end
 
 get '/survey/:id' do
   #displays individual survey with questions
-  @survey = Survey.find(params[id])
+  @survey = Survey.find(params[:id])
   @questions = @survey.questions.all
   erb :survey
 end

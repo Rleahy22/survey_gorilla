@@ -2,7 +2,7 @@
   <h3>Your Surveys</h3>
   <ul>
     <% @surveys.each do |survey| %>
-    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.title %></a></li>
+    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
     <% end %>
   </ul>
 </div>
@@ -15,7 +15,7 @@
   <h3>Surveys You've Taken</h3>
   <ul>
     <% @taken_surveys.each do |survey| %>
-    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.title %></a></li>
+    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
     <% end %>
   </ul>
 </div>
