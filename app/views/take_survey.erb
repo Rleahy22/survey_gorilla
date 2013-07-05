@@ -1,10 +1,10 @@
 <h2><%= @survey.name %></h2>
-  <form>
-    <% @questions.each do |question| %>
-    <h3><%= question.body %></h3>
-    <% question.choices.each do |choice| %>
-      <input type="radio" name=<%= "#{question.body}" %> value=<%= "#{choice.body}" %>>"<%= choice.body %>"<br>
-      <% end %>  
-    <% end %>
-    <input type="submit" value="submit">
-  </form>
+<form action="/survey/<%= params[:id] %>/complete" method="POST">
+  <% @questions.each do |question| %>
+  <h3><%= question.body %></h3>
+  <% question.choices.each do |choice| %>
+    <input type="radio" name="responses[<%= question.id %>]" value=<%= "#{choice.id}" %>>"<%= choice.body %>"<br>
+    <% end %>  
+  <% end %>
+  <input type="submit" value="submit">
+</form>

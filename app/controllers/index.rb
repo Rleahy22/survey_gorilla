@@ -41,5 +41,23 @@ end
 
 post '/user' do
   @user = User.find_or_create_by_username(params[:user][:username])
+  session[:id] = @user.id
   redirect "/user/#{@user.id}"
+end
+
+post '/survey/:id/complete' do
+
+  params[:responses].each do |question_id, choice_id|
+    choice = Choice.find(choice_id)
+    choice.count += 1
+    choice.save
+    current_user.responses.create(:body => Choice.find(choice_id).body, :question_id => question_id)
+  end
+  redirect '/'
+end
+
+get '/survey/:id/results' do
+  @survey = Survey.find(params[:id])
+  @questions = @survey.questions.all
+  erb :results
 end
