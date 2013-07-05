@@ -12,13 +12,11 @@ get '/user/:id' do
   #lists surveys user has created
   #gives option to create new survey
   #lists surveys user has taken
-  id = params[id]
-  
-  = Responses.where_user_id(id)
-
-  @taken_surveys 
 
   @surveys = User.surveys
+
+  @taken_surveys = Responses.where_user_id(params[:id]).map {|response| response.question.survey }.uniq
+
   erb :user
 end
 
