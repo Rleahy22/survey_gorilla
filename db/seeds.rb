@@ -19,7 +19,7 @@ end
 
 questions.each do |question|
   (rand(2..6)).times do
-    question.choices.create!(:body => Faker::Lorem.words(3))
+    question.choices.create!(:body => Faker::Lorem.words(3), :count => 0)
   end
 end
 

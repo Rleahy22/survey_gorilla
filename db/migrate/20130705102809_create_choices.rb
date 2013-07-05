@@ -3,6 +3,7 @@ class CreateChoices < ActiveRecord::Migration
     create_table :choices do |t|
       t.text :body
       t.integer :question_id
+      t.integer :count
     end
   end
 end
