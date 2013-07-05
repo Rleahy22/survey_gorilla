@@ -39,3 +39,13 @@ get '/survey/:id/take' do
 end
 
 
+post '/user' do
+  @user = User.find_or_create_by_username(params[:user][:username])
+  if @user.password == params[:password]
+    session[:id] = @user.id
+    redirect '/user/<% @user.id %>'
+  else
+    redirect_to '/'
+  end
+
+end
