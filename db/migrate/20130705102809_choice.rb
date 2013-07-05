@@ -1,4 +1,4 @@
-class Choice < ActiveRecord::Migration
+class CreateChoices < ActiveRecord::Migration
   def change
     create_table :choices do |t|
       t.text :body
