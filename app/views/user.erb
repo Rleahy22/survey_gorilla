@@ -1,0 +1,21 @@
+<div class="surveys">
+  <h3>Your Surveys</h3>
+  <ul>
+    <% @surveys.each do |survey| %>
+    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.title %></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <!-- link to create a newsurvey -->
+</div>
+
+<div>
+  <h3>Surveys You've Taken</h3>
+  <ul>
+    <% @taken_surveys.each do |survey| %>
+    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.title %></a></li>
+    <% end %>
+  </ul>
+</div>
