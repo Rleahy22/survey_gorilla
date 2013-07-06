@@ -7,3 +7,25 @@
 th {
   text-align: left;
 }
+
+.top {
+
+  height: 100px;
+  width: 100%;
+  border: 2px solid gray;
+  margin: 0px 0px 10px 0px;
+}
+
+.top h1 {
+  margin: 0px;
+  font-size: 60px;
+  float: left
+}
+
+.top a {
+  float: right;
+}
+
+.body {
+  background-color: #c3c3ab;
+}

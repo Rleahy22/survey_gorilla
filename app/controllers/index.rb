@@ -15,7 +15,7 @@ get '/user/:id' do
   @user = User.find(params[:id])
   @surveys = @user.surveys
 
-  @taken_surveys = Response.find_all_by_user_id(params[:id]).map {|response| response.question.survey }.uniq
+  @taken_surveys = Response.find_all_by_user_id(params[:id]).map { |response| response.question.survey }.uniq
 
   erb :user
 end
@@ -24,6 +24,14 @@ get '/survey' do
   #lists all surveys
   @surveys = Survey.all
   erb :list_surveys
+end
+
+get '/survey/new' do
+  erb :new_survey
+end
+
+post '/survey/create' do
+  raise params[:question].to_json
 end
 
 get '/survey/:id' do
@@ -61,3 +69,4 @@ get '/survey/:id/results' do
   @questions = @survey.questions.all
   erb :results
 end
+
