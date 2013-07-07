@@ -1,21 +1,27 @@
-<div class="surveys">
-  <h3>Your Surveys</h3>
-  <ul>
-    <% @surveys.each do |survey| %>
-    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
-    <% end %>
-  </ul>
+<div id="user_nav">
+  <div class="surveys">
+    <h1>Your Surveys</h1>
+    <ul>
+      <% @surveys.each do |survey| %>
+      <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <!-- link to create a newsurvey -->
+  </div>
+
+  <div>
+    <h1>Surveys You've Taken</h1>
+    <ul>
+      <% @taken_surveys.each do |survey| %>
+      <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
-<div>
-  <!-- link to create a newsurvey -->
-</div>
-
-<div>
-  <h3>Surveys You've Taken</h3>
-  <ul>
-    <% @taken_surveys.each do |survey| %>
-    <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
-    <% end %>
-  </ul>
+<div id="black">
+  
 </div>

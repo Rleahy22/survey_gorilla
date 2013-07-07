@@ -8,24 +8,141 @@ th {
   text-align: left;
 }
 
-.top {
+html {
+  height: 100%;
+  background:url('../images/otter.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .85;
+}
 
-  height: 100px;
-  width: 100%;
+.top {
+  vertical-align: middle;
+  background-color: black;
+  position: fixed;
+  top: 30%;
+  left: 25%;
+  height: 150px;
+  width: 50%;
   border: 2px solid gray;
-  margin: 0px 0px 10px 0px;
+  opacity: 1;
 }
 
 .top h1 {
+  padding-top: 15px;
+  color: white;
+  text-align: center;
   margin: 0px;
-  font-size: 60px;
-  float: left
+  font-size: 100px;
 }
 
-.top a {
-  float: right;
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
 }
 
-.body {
-  background-color: #c3c3ab;
+.bottom .login {
+  float: left;
+  height: 80px;
+  width: 10%;
+  background-color: #000000;
+  opacity: .99;
+}
+
+.bottom .links {
+  height: 80px;
+  float: left;
+  width: 90%;
+  background-color: gray;
+  opacity: .7;
+}
+
+.bottom a {
+  font-size: x-large;
+  text-decoration: none;
+  padding: 5px;
+  color: white;
+}
+
+#name_label {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#login_form {
+  margin: 1%;
+}
+
+#user_nav {
+  padding: 1%;
+  float: left;
+  height: 70%;
+  width: 15%;
+  background-color: gray;
+  opacity: .8;
+}
+
+#black {
+  float: left;
+  height: 30%;
+  width: 17%;
+  background-color: black;
+  position: fixed;
+  bottom: 0%;
+}
+
+#user_nav a {
+  font-size: x-large;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+html,body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#survey_view {
+  background-color: gray;
+  width: 30%;
+  padding: 1%;
+  opacity: .85;
+}
+
+#survey_header {
+  margin: 0%;
+  width: 100%;
+  background-color: gray;
+  opacity: .85;
+}
+
+#survey_name {
+  font-size: xx-large;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#question_name {
+  font-size: x-large;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#question {
+  width: 100%;
+  padding: 1%;
+  font-weight: bold;
+  background-color: black;
+  opacity: .95;
+  color: white;
+}
+
+#question td {
+  padding: 1%;
 }

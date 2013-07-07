@@ -1,16 +1,21 @@
-<h2><%= @survey.name %></h2>
-<% @questions.each do |question| %>
-  <h3><%= question.body %></h3>
-  <table border="1">
-    <tr>
-      <td>Option</td>
-      <td>Count</td>
-    </tr>
-    <% question.choices.each do |choice| %>
-    <tr>
-      <td><%= choice.body %></td>
-      <td><%= choice.count %></td>
-    </tr>
-    <% end %>  
-  </table>
-<% end %>
+<div id="survey_header">
+    <h2 id="survey_name"><%= @survey.name %></h2>
+  </div>
+
+<div id="survey_view">
+  <% @questions.each do |question| %>
+      <h3 id="question_name"><%= question.body %></h3>
+      <table border="1" id="question">
+        <tr>
+          <td>Option</td>
+          <td>Count</td>
+        </tr>
+        <% question.choices.each do |choice| %>
+        <tr>
+          <td><%= choice.body %></td>
+          <td><%= choice.count %></td>
+        </tr>
+        <% end %>  
+      </table>
+  <% end %>
+</div>
