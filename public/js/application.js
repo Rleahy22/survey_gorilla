@@ -9,6 +9,13 @@ $(document).ready(function() {
 
   $('#new_question').on("click", function() {
     numberOfQuestions++;
-    $('#form').append('<div class="question"><input type="text" name="question'+(numberOfQuestions)+'" placeholder="enter question"><br><br><div class="choice"><input type="text" name="question'+(numberOfQuestions)+'[choice1]" placeholder="enter choice"><br></div><br></div>');
+    $('#form').append('<div class="question"><input type="text" name="question'+(numberOfQuestions)+'" placeholder="enter question"><br><br><div class="choice"><input type="text" name="question'+(numberOfQuestions)+'[choice1]" placeholder="enter choice"><br></div></div>');
   });
+
+  // $('#create').submit(function(event) {
+  //   event.preventDefault();
+  //   console.log($(this).serialize());
+  //   // alert("This js script works.");
+  // });
+
 });

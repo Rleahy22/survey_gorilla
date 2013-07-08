@@ -1,16 +1,25 @@
-<form method="POST" action="/survey/create">
+<div id="user_nav" style="height:auto;">
+  <div class="surveys">
+    <h1>Create a Survey</h1>
+
+<form id="create" method="POST" action="/survey/create">
   <div id="form">
-    <div class="question">
+<!--     <input type="text" name="question1" placeholder="enter question">
+ -->    <div class="question">
       <input type="text" name="question1" placeholder="enter question"><br><br>
       <div class="choice">
         <input type="text" name="question1[choice1]" placeholder="enter choice"><br>
       </div>
     </div>
-  </div><br><br><br>
+  </div><br><br>
   <a href="#" class="new_choice">Add choice</a><br>
-  <br><br><br>
+  <br>
   <a href="#" id="new_question">Add question</a><br>
+<br><br>
 
-  <input type="submit">
+  <input type="submit" value="Submit!">
 
 </form>
+
+</div>
+</div>

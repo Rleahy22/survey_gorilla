@@ -1,5 +1,7 @@
 <div id="survey_header">
     <h2 id="survey_name"><%= @survey.name %></h2>
+    <h3 style="float:right; padding: 20px 10px 8px;color: #fff;"><% if current_user %>Hello, <%= current_user.username %><% else %>This<% end %> - - <a href="/logout"> Logout</a>
+</h3>
   </div>
 
 <div id="survey_view">

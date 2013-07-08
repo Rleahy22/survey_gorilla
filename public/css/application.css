@@ -88,10 +88,16 @@ html {
 #black {
   float: left;
   height: 30%;
-  width: 17%;
+  width: 15%;
   background-color: black;
   position: fixed;
   bottom: 0%;
+  padding: 1%;
+  color: #fff;
+}
+
+#black a:link, a:active, a:visited {
+  color: #fff;
 }
 
 #user_nav a {
@@ -126,6 +132,7 @@ a {
 
 #survey_name {
   padding: 0% 0% 0% 1%;
+  float: left;
   font-size: xx-large;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -148,4 +155,10 @@ a {
 
 #question td {
   padding: 1%;
+}
+
+.question {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #4f4f4f;
 }

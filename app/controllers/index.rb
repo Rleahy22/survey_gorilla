@@ -8,11 +8,27 @@ get '/login' do
   erb :login
 end
 
+get '/signup' do
+
+  erb :signup
+end
+
+post '/create_user' do
+  User.create(params[:user])
+  redirect '/'
+end
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect to '/'
+end
+
 get '/user/:id' do
   #lists surveys user has created
   #gives option to create new survey
   #lists surveys user has taken
-  @user = User.find(params[:id])
+  redirect '/' unless session[:auth]
+  @user = User.find(session[:auth])
   @surveys = @user.surveys
 
   @taken_surveys = Response.find_all_by_user_id(params[:id]).map { |response| response.question.survey }.uniq
@@ -31,6 +47,8 @@ get '/survey/new' do
 end
 
 post '/survey/create' do
+
+
   raise params[:question].to_json
 end
 
@@ -48,9 +66,15 @@ get '/survey/:id/take' do
 end
 
 post '/user' do
-  @user = User.find_or_create_by_username(params[:user][:username])
-  session[:id] = @user.id
-  redirect "/user/#{@user.id}"
+  @user = User.verify(params)
+  unless @user.nil?
+    session[:auth] = @user.id
+    redirect "user/#{@user.id}"
+  else
+    redirect '/'
+  end
+
+  erb :login
 end
 
 post '/survey/:id/complete' do
