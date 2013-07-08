@@ -14,13 +14,17 @@ get '/signup' do
 end
 
 post '/create_user' do
-  User.create(params[:user])
-  redirect '/'
+  if @user = User.create(params[:user])
+    session[:auth] = @user.id
+    redirect "/user/#{@user.id}"
+  else
+    redirect '/signup'
+  end
 end
 
 get '/logout' do
   session[:auth] = nil
-  redirect to '/'
+  redirect '/'
 end
 
 get '/user/:id' do
