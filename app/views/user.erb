@@ -1,6 +1,6 @@
 <div id="user_nav">
   <div class="surveys">
-    <h1>Your Surveys</h1>
+    <h1><%= @user.username %>'s Surveys</h1>
     <ul>
       <% @surveys.each do |survey| %>
       <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>
@@ -13,7 +13,7 @@
   </div>
 
   <div>
-    <h1>Surveys You've Taken</h1>
+    <h1>Surveys <%= @user.username %> Has Taken</h1>
     <ul>
       <% @taken_surveys.each do |survey| %>
       <li><a href=<%= "/survey/#{survey.id}" %>><%= survey.name %></a></li>

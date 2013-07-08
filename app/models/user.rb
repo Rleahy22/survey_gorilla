@@ -23,8 +23,6 @@ class User < ActiveRecord::Base
 
   def self.verify(params)
     @user = User.find_by_username(params[:username])
-    puts @user.username
-    puts params[:password]
     @user.password == params[:password] ? @user : nil
   end
 end

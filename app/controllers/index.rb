@@ -19,7 +19,7 @@ post '/create_user' do
 end
 
 get '/logout' do
-  session[:user_id] = nil
+  session[:auth] = nil
   redirect to '/'
 end
 
@@ -27,7 +27,7 @@ get '/user/:id' do
   #lists surveys user has created
   #gives option to create new survey
   #lists surveys user has taken
-  redirect '/' unless session[:auth]
+  redirect '/' unless session[:auth] == params[:id].to_i
   @user = User.find(session[:auth])
   @surveys = @user.surveys
 
@@ -69,12 +69,11 @@ post '/user' do
   @user = User.verify(params)
   unless @user.nil?
     session[:auth] = @user.id
-    redirect "user/#{@user.id}"
+    redirect "/user/#{@user.id}"
   else
-    redirect '/'
+    redirect '/login'
   end
 
-  erb :login
 end
 
 post '/survey/:id/complete' do
